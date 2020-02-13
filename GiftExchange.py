@@ -26,15 +26,15 @@ for j in range(numPeople):
     #Pick a random person to assign a gift to.
     receivers = random.sample(givers, numPeople)
     #Removing the duplicates of the lists but using sets because when you use
-    #the difference tool in sets it will remove duplicates.
+    #the difference tool in sets it will remove duplicates. Equal to the elements present in givers but not receivers
     check = list(set(givers) - set(receivers))
     #Have to use try and except to go through the list
     #since the check list is empty.
     try:
         check.remove(j)
     except:
-        continue
-        #use pass?
+        #Pass will finish this loop and go back to the beginning 
+        pass
     #Append the recievers to a new list so that they dont get picked again
     move.append(recievers)
      
