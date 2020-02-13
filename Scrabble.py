@@ -40,7 +40,7 @@ def main():
         #Below add the total score 
         totalScore += wordScore(word)
         #Use continue to keep playing the game and accumulate a total score
-        userInp = input("If you want to continue type yes if not type no.").lower()
+        userInp = input("If you want to continue type yes if not type no. ").lower()
         if(userInp == "yes"):
             continue
         elif(userInp == "no"):
