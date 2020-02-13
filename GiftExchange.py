@@ -36,7 +36,7 @@ for j in range(numPeople):
         #Pass will finish this loop and go back to the beginning 
         pass
     #Append the recievers to a new list so that they dont get picked again
-    move.append(recievers)
+    move.append(receivers)
      
 # Print results
 
