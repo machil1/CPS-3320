@@ -25,8 +25,8 @@ move = []
 for j in range(numPeople):
     #Pick a random person to assign a gift to.
     receivers = random.sample(givers, numPeople)
-    #Removing the duplicates of the lists but using sets because when you use
-    #the difference tool in sets it will remove duplicates. Equal to the elements present in givers but not receivers
+    #Will pick a random giver then keep the new names only in givers and get subtract the names of
+    #what is used from 
     check = list(set(givers) - set(receivers))
     #Have to use try and except to go through the list
     #since the check list is empty.
