@@ -2,17 +2,34 @@
 
 #Below will pick a random word to choose for hangman
 import random
-A = ['p','y','t','h','o','n']
-B = ['d','o','m','a','n','s','k','i']
-C = ['k','e','a','n']
-D = ['p','o','d','c','a','s','t']
-selection = [A,B,C,D]
-selection = random.choice(selection)
+
+#A = ['p','y','t','h','o','n']
+#B = ['d','o','m','a','n','s','k','i']
+#C = ['k','e','a','n']
+#D = ['p','o','d','c','a','s','t']
+#selection = [A,B,C,D]
+#selection = random.choice(selection)
+
+selection = [] 
+f = open("selection.txt",'r')
+for i in f:
+    selection.append(i)
+    
+#Got this to work using a file input
+#to make this work I had to strip the next line from the text file
+#since each word was on a new line, then I had to make a new list
+#and traverse through each letter making each letter its own character
+#so we can match each index.
+random = random.choice(selection).rstrip("\n")
+new = []
+for j in random:
+    new.append(j) 
+
 
 
 #Once the word is picked we will generate the dash marks for number of
 #letters in the word
-L = ['_'] * len(selection)
+L = ['_'] * len(random)
 
 play = True
 wrongAns=['_','_','_','_','_','_']
@@ -24,7 +41,7 @@ while play == True:
 
     i = 0
     letter = str(input("Guess a letter: ")).lower()
-    for currentletter in selection:
+    for currentletter in new:
         #Check if the letter is not the current letter if not go to next letter
         #to traverse through the word
         if letter != currentletter:
@@ -33,10 +50,10 @@ while play == True:
         # set the underscore in the user's answer to that letter
         elif letter == currentletter:
             L[i] = letter
-            pass
+            
         #Check for letters that are not in the word, if it is not then
         #increase the amount of wrong tries and increment the index 
-        if letter not in selection:
+        if letter not in new:
            wrong += 1
            wrongAns[j] = "x"
            j += 1
@@ -62,9 +79,8 @@ while play == True:
     print()
     # Test to see if the word has been successfully completed,
     # and if so, end the loop
-    if selection == L:
+    if new == L:
         play = False
         print("GREAT JOB!")
         break
-print("The word was:", selection)
-
+print("The word was:", new)
