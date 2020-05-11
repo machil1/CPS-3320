@@ -1,0 +1,10 @@
+    Date                    log                
+ 2020-05-10  Testing for next day, works great!
+
+    Date                          log                       
+ 2020-05-11  Next day entry, make sure to submit code today!
+
+    Date      log   
+ 2020-05-11  workout
+
+
