@@ -4,7 +4,7 @@ import datetime
 from threading import Timer
 import pandas as pd
 from tkinter import *
-import sys
+
 
 #Lawrence Machi III
 #This program will ask the user for a log entry at your selected time everyday,
